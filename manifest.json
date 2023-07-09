@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Medium Only Free",
+  "description": "Extension for Medium.com",
+  "version": "1.0",
+
+
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "action": {
+    "default_popup": "index.html"
+  },
+
+
+  "content_scripts": [
+    {
+      "js": ["script.js"],
+      "matches": [
+        "https://medium.com/"
+    ]
+    }]
+}
