@@ -1,15 +1,3 @@
-console.log("Hello World");
-
-// localStorage.setItem("test", "hidden");
-
-
-
-
-// if (localStorage.getItem("test") === "hidden") {
-//     console.log("Local Storage: " + localStorage.getItem("test"));
-// }
-
-
 const hideBtn = () => {
     let panel = document.querySelectorAll("#root > div > div.s.c > div.s.t.u.v.c > div.av.o.x.n.aw > div.n.o.ax");
     let btnHide = document.createElement("button");
@@ -20,10 +8,7 @@ const hideBtn = () => {
 
     btnHide.addEventListener("click", () => {
         modifyPost("hide");
-        localStorage.setItem("modeView", "hide");
-      
-
-
+        localStorage.setItem("modeView", "hide");   
     })
 
     btnHide.style.color = "#c4fee0";
@@ -35,8 +20,6 @@ const hideBtn = () => {
     btnHide.style.backgroundColor = "#292929";
     btnHide.style.margin = "5px";
     btnHide.id = "btnHide";
-
-    
 
 }
 
@@ -61,19 +44,13 @@ const highlightBtn = () => {
     btnHighlight.style.borderRadius = "20px";
     btnHighlight.style.backgroundColor = "#292929";
     btnHighlight.id = "btnHighlight";
-
-
 }
 
 
 
 const modifyPost = (mode) => {
-//    setInterval(removePremiumPost, 1000);
 if (document.querySelector("article div div section") === null) {
 
-
-    
-    
     const articles = document.querySelectorAll("article");
     
     articles.forEach((article) => {
@@ -108,15 +85,10 @@ if (document.querySelector("article div div section") === null) {
     }
 
 
-
-
-
         cont += 1;
     
     })
 }
-    console.log("FUNCAO");
-
 
 }
 

@@ -15,7 +15,7 @@
     {
       "js": ["script.js"],
       "matches": [
-        "https://medium.com/"
+        "https://medium.com/*"
     ]
     }]
 }
