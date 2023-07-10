@@ -4,8 +4,17 @@
   "description": "Extension for Medium.com",
   "version": "1.0",
 
+  "background": {
+    "service_worker": "service-worker.js"
 
-  "permissions": ["activeTab", "scripting", "tabs"],
+  },
+
+  "web_accessible_resources": [{
+    "matches": ["<all_urls>"],
+    "resources": ["images/hide.svg", "images/highlight.svg", "images/normal.svg"]
+}],
+
+  "permissions": ["activeTab", "scripting", "tabs", "webRequest"],
   "action": {
     "default_popup": "index.html"
   },
@@ -15,7 +24,7 @@
     {
       "js": ["script.js"],
       "matches": [
-        "https://medium.com/*"
+        "https://medium.com/**"
     ]
     }]
 }
