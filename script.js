@@ -1,11 +1,13 @@
+const firstExecution = () => {
+    if (localStorage.getItem("modeView") != ("highlight" || "hide")) {
+        localStorage.setItem("modeView", "highlight");
+    }
+}
+
 
 const stdBtn = () => {
 
-
-    
-
-    let btn = document.createElement("img");
-    
+    let btn = document.createElement("img");    
 
     btn.src = chrome.runtime.getURL(`images/${localStorage.getItem("modeView")}.svg`);
     btn.style.width = "25px";
@@ -20,9 +22,7 @@ const stdBtn = () => {
 
     btn.addEventListener("click", () => {
         stateButton = localStorage.getItem("modeView");
-
-        // btn.src = chrome.runtime.getURL(`images/${stateButton}.svg`);
-        
+         
         if (stateButton === "highlight"){
             {
                 btn.src = chrome.runtime.getURL(`images/hide.svg`);
@@ -41,13 +41,6 @@ const stdBtn = () => {
             }
             
         }
-        // else if (stateButton === "normal"){
-        //     {
-        //         modifyPost("hide");
-        //         localStorage.setItem("modeView", "hide");
-        //     }
-        // }
-
 
 })
 
@@ -111,7 +104,6 @@ const highlightBtn = () => {
 
 const modifyPost = (mode) => {
 
-console.log(document.baseURI)
 
 if (document.querySelector("article div div section") === null) 
 {   
@@ -132,10 +124,7 @@ if (document.querySelector("article div div section") === null)
                 article.style.display = "none";
 
             }
-            else if (mode === "normal"){
-                console.log("normal");
-            }
-    
+
     }
 
     })
@@ -144,7 +133,7 @@ if (document.querySelector("article div div section") === null)
 }
 
 
-
+firstExecution();
 stdBtn();
 
 
@@ -163,7 +152,7 @@ var observer = new MutationObserver(function(mutationsList) {
             var articleEvent = new CustomEvent('articleCreated', { detail: addedNode });
             document.dispatchEvent(articleEvent);
           }
-        }
+        }   
       }
     }
   });
@@ -171,8 +160,7 @@ var observer = new MutationObserver(function(mutationsList) {
   // Configura o observador para observar adições de nós no DOM
   observer.observe(document.body, { childList: true, subtree: true });
 
-  document.addEventListener('articleCreated', function(event) {
-    var articleElement = event.detail;
-    // Faça o que for necessário com o elemento <article> criado
-    modifyPost(localStorage.getItem("modeView"));
-  });
+    document.addEventListener('articleCreated', () => {
+
+        modifyPost(localStorage.getItem("modeView"));
+    });
