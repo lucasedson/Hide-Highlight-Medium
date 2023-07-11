@@ -148,11 +148,31 @@ if (document.querySelector("article div div section") === null)
 stdBtn();
 
 
-document.addEventListener("mousemove", ()=> {
 
-    setTimeout(modifyPost(localStorage.getItem("modeView")), 250);
-    
-});
+// Criação do observador de mutação
+var observer = new MutationObserver(function(mutationsList) {
+    // Verifica todas as mutações observadas
+    for (var mutation of mutationsList) {
+      // Verifica se houve adição de nós no DOM
+      if (mutation.type === 'childList') {
+        // Verifica cada nó adicionado
+        for (var addedNode of mutation.addedNodes) {
+          // Verifica se o nó adicionado é um elemento <article>
+          if (addedNode instanceof HTMLElement && addedNode.tagName === 'ARTICLE') {
+            // Dispara o evento personalizado
+            var articleEvent = new CustomEvent('articleCreated', { detail: addedNode });
+            document.dispatchEvent(articleEvent);
+          }
+        }
+      }
+    }
+  });
+  
+  // Configura o observador para observar adições de nós no DOM
+  observer.observe(document.body, { childList: true, subtree: true });
 
-
-console.log(window.fetch);
+  document.addEventListener('articleCreated', function(event) {
+    var articleElement = event.detail;
+    // Faça o que for necessário com o elemento <article> criado
+    modifyPost(localStorage.getItem("modeView"));
+  });
