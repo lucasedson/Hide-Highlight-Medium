@@ -16,7 +16,7 @@ Escolha a pasta no qual você clonou esse repositório.
 
 Se tudo deu certo, aparecerá um card assim:
 
-[CARD]
+<img src="https://raw.githubusercontent.com/lucasedson/Hide-Highlight-Medium/master/DOC/Card-Extension.png">
 
 Mantenha a extensão habilitada.
 ## Usando a extensão:
@@ -26,10 +26,11 @@ Para o funcionamento da extensão, é necessário está logado no site.
 Verás que ao lado da barra de pesquisa apareceu um ícone de lampada.
 Clique nele para alternar entre Ocultar ou Destacar os posts.
 
-[Highlight]
+<img src="https://raw.githubusercontent.com/lucasedson/Hide-Highlight-Medium/master/DOC/Highlight.png">
 
-## Veja como foi desenvolvida essa extensão:
+# 
+### Veja como foi desenvolvida essa extensão:
 
-INGLES - https://medium.com/@lucasedson654/hide-or-highlight-premium-posts-making-a-chrome-extension-for-medium-com-8539ddde8862
+[ENGLISH](https://medium.com/@lucasedson654/hide-or-highlight-premium-posts-making-a-chrome-extension-for-medium-com-8539ddde8862)
 
-PORTUGUÊS - https://www.tabnews.com.br/lucasedson/oculte-ou-destaque-artigos-premium-criando-uma-extensao-do-chrome-para-o-medium-com
+[PORTUGUÊS](https://www.tabnews.com.br/lucasedson/oculte-ou-destaque-artigos-premium-criando-uma-extensao-do-chrome-para-o-medium-com)
